@@ -1,0 +1,23 @@
+name: CI - App3 API
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  trigger-template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger repository_dispatch
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.repos.createDispatchEvent({
+              owner: 'nohaila1231',
+              repo: 'template-pro',
+              event_type: 'run-ci',
+              client_payload: {
+                'target-repo': 'nohaila1231/app-3-api',
+                'run-tests': true
+              }
+            });
