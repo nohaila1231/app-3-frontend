@@ -19,7 +19,7 @@ jobs:
                 repo: 'template-pro',
                 event_type: 'run-ci',
                 client_payload: {
-                  'target-repo': 'nohaila1231/app-3-api',
+                  'target-repo': 'nohaila1231/app-3-frontend',
                   'run-tests': true
                 }
               });
